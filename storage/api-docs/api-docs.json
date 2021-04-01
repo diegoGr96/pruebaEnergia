@@ -1,0 +1,185 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Energia",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/pruebaEnergia/public/"
+        }
+    ],
+    "paths": {
+        "/api/questions/{tagged}/{fromdate}/{todate}": {
+            "get": {
+                "tags": [
+                    "Question"
+                ],
+                "summary": "Show",
+                "description": "Show a list of questions0",
+                "operationId": "ApiV1GetQuestions",
+                "parameters": [
+                    {
+                        "name": "tagged",
+                        "in": "path",
+                        "required": true,
+                        "example": "di"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "path",
+                        "required": false,
+                        "example": 1612137600
+                    },
+                    {
+                        "name": "todate",
+                        "in": "path",
+                        "required": false,
+                        "example": 1617321600
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "has_more": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "quota_max": {
+                                            "type": "integer",
+                                            "example": 300
+                                        },
+                                        "quota_remaining": {
+                                            "type": "integer",
+                                            "example": 100
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/questions/{tagged}/{fromdate}": {
+            "get": {
+                "tags": [
+                    "Question"
+                ],
+                "summary": "Show",
+                "description": "Show a list of questions",
+                "operationId": "ApiV1GetQuestions1",
+                "parameters": [
+                    {
+                        "name": "tagged",
+                        "in": "path",
+                        "required": true,
+                        "example": "di"
+                    },
+                    {
+                        "name": "fromdate",
+                        "in": "path",
+                        "required": false,
+                        "example": 1612137600
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "has_more": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "quota_max": {
+                                            "type": "integer",
+                                            "example": 300
+                                        },
+                                        "quota_remaining": {
+                                            "type": "integer",
+                                            "example": 100
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/questions/{tagged}": {
+            "get": {
+                "tags": [
+                    "Question"
+                ],
+                "summary": "Show",
+                "description": "Show a list of questions",
+                "operationId": "ApiV1GetQuestions2",
+                "parameters": [
+                    {
+                        "name": "tagged",
+                        "in": "path",
+                        "required": true,
+                        "example": "di"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "has_more": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "quota_max": {
+                                            "type": "integer",
+                                            "example": 300
+                                        },
+                                        "quota_remaining": {
+                                            "type": "integer",
+                                            "example": 100
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
